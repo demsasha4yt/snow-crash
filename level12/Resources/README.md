@@ -38,7 +38,7 @@ n(t(param("x"), param("y")));
 - `$xx =~ tr/a-z/A-Z/`: переводим все символы в UPPERCASE
 - `$xx =~ s/\s.*//`: удалить все после пробела
 
-Поэтому мы не можем просто использовать -`:4646/level12.pl?x=getflag>/tmp/flag`
+Поэтому мы не можем просто использовать -`:4646?x=getflag>/tmp/flag`
 
 ```bash
 level12@SnowCrash:~$ cat /tmp/GETFLAG
