@@ -35,7 +35,7 @@ PROFIT!
 woupa2yuojeeaaed06riuj63c
 .*( )*.
 
-sy flag10
+su flag10
 getflag
 
 Check flag.Here is your token : feulo4b72j7edeahuete3no7c
